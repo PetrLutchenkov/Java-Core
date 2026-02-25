@@ -28,9 +28,7 @@ public class Task_4 {
         int maxGrade = studentGrades[0];
         int minGrade = studentGrades[0];
 
-        for (int i = 0; i < studentGrades.length; i++) {
-            int currentGrade = studentGrades[i];
-
+        for (int currentGrade : studentGrades) {
             sum += currentGrade;
 
             if (currentGrade > maxGrade) {

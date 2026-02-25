@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Task_5 {
     public static void main(String[] args) {
 
@@ -15,58 +17,46 @@ public class Task_5 {
     Найдите разницу между самой высокой и самой низкой температурой.
      */
 
-        int[] temperatures = {5, 12, 25, 28, -2, 18, 22};
-
-        // Переменные для сбора данных
+        int[] temperatures = new int [7];
+        Random random = new Random();
+        int min = -10;
+        int max = 30;
+        for (int i = 0; i < temperatures.length; i++) {
+            temperatures[i] = random.nextInt(max - min + 1) + min;
+        }
         int sum = 0;
         int hotDaysCount = 0;
-
-        // Берем температуру первого дня как начальную точку для сравнения
         int maxTemp = temperatures[0];
         int minTemp = temperatures[0];
 
         System.out.println("=== Температуры за неделю ===");
-
-        // 2. Проходим циклом по всем дням
         for (int i = 0; i < temperatures.length; i++) {
             int currentTemp = temperatures[i];
 
-            // Задание 1: Выводим все температуры
             System.out.println("День " + (i + 1) + ": " + currentTemp + " градусов");
 
-            // Собираем сумму для среднего значения
-            sum = sum + currentTemp;
-
-            // Задание 2: Ищем самую высокую температуру
+            sum += currentTemp;
             if (currentTemp > maxTemp) {
                 maxTemp = currentTemp;
             }
 
-            // Задание 3: Ищем самую низкую температуру
             if (currentTemp < minTemp) {
                 minTemp = currentTemp;
             }
 
-            // Усложнение: Считаем дни жарче 20 градусов
             if (currentTemp > 20) {
-                hotDaysCount = hotDaysCount + 1;
+                hotDaysCount += 1;
             }
         }
 
-        // Задание 4: Рассчитываем среднюю температуру (используем double для точности)
         double averageTemp = (double) sum / temperatures.length;
 
-        // Усложнение: Находим разницу между максимумом и минимумом
         int difference = maxTemp - minTemp;
 
-        // --- Выводим результаты анализа ---
         System.out.println("\n=== Анализ метеоролога ===");
         System.out.println("Самая высокая температура: " + maxTemp);
         System.out.println("Самая низкая температура: " + minTemp);
-
-        // Используем String.format (с которым мы разбирались ранее), чтобы оставить 1 знак после запятой
         System.out.println("Средняя температура: " + String.format("%.1f", averageTemp));
-
         System.out.println("Дней с температурой выше 20 градусов: " + hotDaysCount);
         System.out.println("Разница между самой высокой и самой низкой: " + difference + " градусов");
     }
