@@ -1,3 +1,5 @@
+package homework;
+
 public class Task_6 {
 
     /*
@@ -48,6 +50,7 @@ public class Task_6 {
             }
             studentAverages[i] = (double) sum / grades[i].length;
             System.out.println("Студент " + (i + 1) + ": " + String.format("%.1f", studentAverages[i]));
+        System.out.println();
         }
 
         System.out.println("\n=== Средний балл по предметам ===");

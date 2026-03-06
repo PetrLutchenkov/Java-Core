@@ -1,3 +1,5 @@
+package homework;
+
 import java.util.Random;
 
 public class Task_5 {
@@ -32,8 +34,8 @@ public class Task_5 {
         System.out.println("=== Температуры за неделю ===");
         for (int i = 0; i < temperatures.length; i++) {
             int currentTemp = temperatures[i];
-
-            System.out.println("День " + (i + 1) + ": " + currentTemp + " градусов");
+//            String temperatura = (currentTemp%10 == 2) ? " градуса" : " градусов";
+            System.out.println("День " + (i + 1) + ": " + currentTemp + "°");
 
             sum += currentTemp;
             if (currentTemp > maxTemp) {
