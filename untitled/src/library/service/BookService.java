@@ -4,7 +4,6 @@ import library.model.Book;
 import library.repository.BookRepository;
 
 public class BookService {
-
     private final BookRepository bookRepository;
 
     private int nextBookId = 1;

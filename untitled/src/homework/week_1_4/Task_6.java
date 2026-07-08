@@ -1,4 +1,4 @@
-package homework;
+package homework.week_1_4;
 
 public class Task_6 {
 

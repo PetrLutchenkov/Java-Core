@@ -36,4 +36,7 @@ class Main {
             a.makeSound();  // У каждого своя реализация
         }
     }
+
+    public static void connectSafely(String s) {
+    }
 }
